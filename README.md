@@ -7,6 +7,19 @@ This script runs forever watching and waiting for a livestream to start, then do
 *WIP*
 
 
+# Convert to mp4
+
+    ffmpeg -i input.ts -acodec copy -vcodec copy out.mp4
+
+# Download stream using streamlink
+
+    streamlink -v --http-no-ssl-verify --hls-live-restart -o 2019-05-26.ts https://www.youtube.com/watch?v=nDIsueMUy-c best
+
+https://github.com/streamlink/streamlink
+
+# Resources
+
+- [Google API Quotas](https://console.developers.google.com/iam-admin/quotas)
 - [Youtube v3 API](https://godoc.org/google.golang.org/api/youtube/v3#LiveStreamsListCall)
 - [How to use the `part` parameter](https://developers.google.com/youtube/v3/getting-started#part)
 - [Go Examples](https://github.com/youtube/api-samples/tree/master/go)
